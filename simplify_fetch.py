@@ -173,7 +173,7 @@ def run() -> None:
         # Step 1: Login
         # ------------------------------------------------------------------
         print("[INFO] Opening login page ...", flush=True)
-        page.goto(f"{SIMPLIFY_URL}/site/login", wait_until="networkidle")
+        page.goto(f"{SIMPLIFY_URL}/site/login", wait_until="domcontentloaded", timeout=90_000)
 
         page.fill("input[type='email'], input[name='_uemail'], input[placeholder*='email' i]", email)
         page.click("button:has-text('Continue'), input[type='submit'][value*='Continue' i]")
@@ -195,7 +195,7 @@ def run() -> None:
         # Step 2: Navigate to report
         # ------------------------------------------------------------------
         print("[INFO] Navigating to report ...", flush=True)
-        page.goto(REPORT_URL, wait_until="networkidle")
+        page.goto(REPORT_URL, wait_until="domcontentloaded", timeout=90_000)
 
         page.wait_for_selector("iframe", timeout=20_000)
         iframe_handle = page.locator("iframe").first.element_handle(timeout=10_000)
