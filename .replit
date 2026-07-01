@@ -13,4 +13,12 @@ HEADLESS = "true"
 PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS = "true"
 
 [deployment]
+build = ["pip", "install", "-r", "requirements.txt"]
 run = ["python3", "simplify_fetch.py"]
+
+[userenv]
+
+[userenv.shared]
+
+[agent]
+expertMode = true
