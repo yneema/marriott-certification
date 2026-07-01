@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.env
+downloads/
+*.xlsx
+
+# Never commit service account private keys
+marriot-*.json
+*service_account*.json

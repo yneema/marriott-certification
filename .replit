@@ -1,0 +1,16 @@
+run = "python3 simplify_fetch.py"
+entrypoint = "simplify_fetch.py"
+modules = ["python-3.11"]
+
+[nix]
+channel = "stable-24_05"
+
+[env]
+PYTHONUNBUFFERED = "1"
+# Headless is required on Replit (no display).
+HEADLESS = "true"
+# PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH is set in replit.nix (it needs the /nix/store path).
+PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS = "true"
+
+[deployment]
+run = ["python3", "simplify_fetch.py"]
