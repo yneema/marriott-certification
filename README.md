@@ -50,7 +50,3 @@ python3 simplify_fetch.py
 
 `.replit` and `replit.nix` configure headless mode and the system Chromium.
 
-## Security
-
-Never commit the service account key. It is provided at runtime via
-`GOOGLE_SERVICE_ACCOUNT_JSON`. `.gitignore` blocks common key filenames.
